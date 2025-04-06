@@ -162,6 +162,24 @@ include 'header.php';
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script> -->
+<!-- jQuery (required for Bootstrap 4 toggle) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Sidebar toggle logic -->
+<script>
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+<!-- Optional: Add style to shift content when sidebar is toggled -->
+<style>
+    #sidebar.active {
+        margin-left: -250px; /* Adjust based on your sidebar width */
+    }
+</style>
 
 </body>
 

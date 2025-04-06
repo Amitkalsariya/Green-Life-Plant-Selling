@@ -62,6 +62,9 @@ if(!isset($_SESSION['user_id']))
             <a href="post.php">Post</a>
           </li>
           <li>
+            <a href="selling_report.php">Selling Report</a>
+          </li>
+          <li>
             <a href="Faqs.php">FAQs</a>
           </li>
           <!-- <li>

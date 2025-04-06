@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2025 at 01:37 PM
+-- Generation Time: Apr 06, 2025 at 08:44 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -85,39 +85,43 @@ CREATE TABLE `checkout` (
   `city` varchar(50) NOT NULL,
   `state` varchar(100) NOT NULL,
   `zip` varchar(8) NOT NULL,
-  `order_id` text NOT NULL
+  `order_id` text NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `checkout`
 --
 
-INSERT INTO `checkout` (`id`, `firstname`, `lastname`, `emailid`, `phonenumber`, `address`, `city`, `state`, `zip`, `order_id`) VALUES
-(7, 'Nimit', 'K', 'nimit@gmail.com', 1234567890, 'testing', 'test', 'test', '12345678', 'kL7y4Jo7aj6wPxmS'),
-(8, 'Amii', 'K', 'amii@gmail.com', 1234567890, 'testing', 'test', 'test', '12345678', 'jBWMVX6qBrZPFdqz'),
-(11, 'Amit', 'Kalsariya', 'amit@gmail.com', 2147483647, 'Surat', 'Surat', 'Surat', '395004', 'XJU0VC4QwhgR1rBA'),
-(12, 'Amit', 'ricky', 's@gmaqil.com', 54854858, 'ukgyvu', 'ugvuy', 'vg', 'uyvuybv', 'y8D3L4bKdqjXfXmP'),
-(13, 'zcd', 'asdad', '', 0, '', '', '', '', 'SSAOUhqj0MZ5swc'),
-(14, 'zcd', 'asdad', '', 0, '', '', '', '', 'w3hXBCEev5qAq0yQ'),
-(15, '', '', '', 0, '', '', '', '', 'pay_QE9DJIxJdC7yGq'),
-(16, 'gtdg', 'safc', '', 0, '', '', '', '', 'KhXWy2sMSlQauhd1'),
-(17, 'Nemu', 'asdad', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', 'sdgsd', 'pay_QEATRQXgvVk9gL'),
-(18, 'sada', 'dsfsfs', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', '395004', 'pay_QEAZXwlnTBfry9'),
-(19, 'Jack', 'Reacher', 'reacher@gmail.com', 2147483647, 'Surat', 'Surat', 'Gujarat', '395006', 'pay_QEAsMgqzc7o8Hs'),
-(20, '', '', '', 0, '', '', '', '', 'COD-1743666963'),
-(21, 'etrf', 'tsrdg', 's@gmaqil.com', 2147483647, 'aSD', 'asd', 'adS', 'C', 'COD-1743667494'),
-(22, '', '', '', 0, '', '', '', '', 'COD'),
-(23, 'Nemu', 'asdad', 'morty@gmail.com', 2147483647, 'aSD', 'Surat', 'Gujarat', '395006', 'COD'),
-(24, '', '', '', 0, '', '', '', '', 'COD'),
-(25, '', '', '', 0, '', '', '', '', 'pay_QEWK1hkaQad4ic'),
-(26, 'Muinna', 'MBBS', 'munna@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Suraty', '85006', 'COD'),
-(27, 'Muinna', 'MBBS', 'munna@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Suraty', '85006', 'pay_QEWNKqFqJNGLK7'),
-(28, 'BHurii', 'MBBS', 'munna@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Suraty', '85006', 'pay_QEWStbxTwxTnxI'),
-(29, 'Jwtho', 'Gada', 'jetha@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Guj', '390055', 'COD'),
-(30, 'Jwtho', 'Gada', 'jetha@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Guj', '390055', 'pay_QEWX4DFmpTCVPO'),
-(31, 'Jwtho', 'Gada', 'jetha@gmail.com', 2147483647, 'Mumbai', 'Surat', 'Guj', '390055', 'COD_766032'),
-(32, '', '', '', 0, '', '', '', '', 'COD_67700'),
-(33, 'Jack', 'Reacher', 'jack@gmail.com', 2147483647, 'London', 'L', 'L', '890065', 'COD_513880');
+INSERT INTO `checkout` (`id`, `firstname`, `lastname`, `emailid`, `phonenumber`, `address`, `city`, `state`, `zip`, `order_id`, `created_at`) VALUES
+(7, 'Nimit', 'K', 'nimit@gmail.com', 1234567890, 'testing', 'test', 'test', '12345678', 'kL7y4Jo7aj6wPxmS', '2025-04-06 11:24:57'),
+(8, 'Amii', 'K', 'amii@gmail.com', 1234567890, 'testing', 'test', 'test', '12345678', 'jBWMVX6qBrZPFdqz', '2025-04-06 11:24:57'),
+(11, 'Amit', 'Kalsariya', 'amit@gmail.com', 2147483647, 'Surat', 'Surat', 'Surat', '395004', 'XJU0VC4QwhgR1rBA', '2025-04-06 11:24:57'),
+(12, 'Amit', 'ricky', 's@gmaqil.com', 54854858, 'ukgyvu', 'ugvuy', 'vg', 'uyvuybv', 'y8D3L4bKdqjXfXmP', '2025-04-06 11:24:57'),
+(13, 'zcd', 'asdad', '', 0, '', '', '', '', 'SSAOUhqj0MZ5swc', '2025-04-06 11:24:57'),
+(14, 'zcd', 'asdad', '', 0, '', '', '', '', 'w3hXBCEev5qAq0yQ', '2025-04-06 11:24:57'),
+(15, '', '', '', 0, '', '', '', '', 'pay_QE9DJIxJdC7yGq', '2025-04-06 11:24:57'),
+(16, 'gtdg', 'safc', '', 0, '', '', '', '', 'KhXWy2sMSlQauhd1', '2025-04-06 11:24:57'),
+(17, 'Nemu', 'asdad', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', 'sdgsd', 'pay_QEATRQXgvVk9gL', '2025-04-06 11:24:57'),
+(18, 'sada', 'dsfsfs', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', '395004', 'pay_QEAZXwlnTBfry9', '2025-04-06 11:24:57'),
+(19, 'Jack', 'Reacher', 'reacher@gmail.com', 2147483647, 'Surat', 'Surat', 'Gujarat', '395006', 'pay_QEAsMgqzc7o8Hs', '2025-04-06 11:24:57'),
+(20, '', '', '', 0, '', '', '', '', 'COD-1743666963', '2025-04-06 11:24:57'),
+(21, 'etrf', 'tsrdg', 's@gmaqil.com', 2147483647, 'aSD', 'asd', 'adS', 'C', 'COD-1743667494', '2025-04-06 11:24:57'),
+(22, '', '', '', 0, '', '', '', '', 'COD', '2025-04-06 11:24:57'),
+(23, 'Nemu', 'asdad', 'morty@gmail.com', 2147483647, 'aSD', 'Surat', 'Gujarat', '395006', 'COD', '2025-04-06 11:24:57'),
+(24, '', '', '', 0, '', '', '', '', 'COD', '2025-04-06 11:24:57'),
+(25, '', '', '', 0, '', '', '', '', 'pay_QEWK1hkaQad4ic', '2025-04-06 11:24:57'),
+(34, 'Jackkk', 'Reacherrr', 'jack@gmail.com', 78096534, 'Surat', 'L', 'L', '890065', 'COD_352381', '2025-04-06 11:24:57'),
+(35, 'Jackkk', 'Reacherrr', 'jack@gmail.com', 78096534, 'Surat', 'L', 'L', '890065', 'pay_QFNPg5XLodoAbX', '2025-04-06 11:24:57'),
+(36, 'Un', 'UN', 'un@gmail.com', 2147483647, 'Xyz', 'Suyrat', 'Guj', '859004', 'COD_936135', '2025-04-06 11:24:57'),
+(37, 'UNO', 'UNO', 'uno@gmail.com', 2147483647, 'S', 'S', 'H', '895004', 'COD_144205', '2025-04-06 11:24:57'),
+(38, 'JUn', 'Jun', 'jun@gmail.com', 2147483647, 'Katargam', 'Surat', 'Surat', '98563254', 'pay_QFe5babpf0wX72', '2025-04-06 11:24:57'),
+(39, 'Num ', 'Lock', 'num@gmail.com', 2147483647, 'Numbering', 'N', 'N', '895623', 'COD_205111', '2025-04-06 11:24:57'),
+(40, 'wqdfaqd', 'adfad', 'adada@gmail.com', 87542112, 'sd', 'hbguh', 'vg', 'vi', 'COD_297722', '2025-04-06 11:24:57'),
+(41, 'ghvu', 'u', 'gvu@gmaiol.com', 874511212, 'sjnhol', 'n', 'o', 'knk', 'COD_111720', '2025-04-06 11:24:57'),
+(42, 'ghvu', 'u', 'gvu@gmaiol.com', 874511212, 'sjnhol', 'n', 'o', 'knk', 'COD_193810', '2025-04-06 11:24:57'),
+(43, 'Vaurn', 'swdiub', 'varun@gmail.com', 2147483647, 'szdchaaSAB', 'Surat', 'Surat', '874512', 'pay_QFeMSsB1wtp2U9', '2025-04-06 11:24:57'),
+(44, 'Un', 'Un', 'un@gmail.com', 2147483647, 'Surat', 'Suat', 'Gujarat', '874512', 'pay_QFejAVdbZ6fMEF', '2025-04-06 11:24:57');
 
 -- --------------------------------------------------------
 
@@ -275,7 +279,8 @@ INSERT INTO `product` (`Prod_id`, `Prod_name`, `Prod_image`, `Prod_description`,
 (10, 'Lily', '12881727433313lily.jpg', 'The inhalation of fragrance from certain', 450, 8, '2024-09-27', '16:05:13', 2, NULL),
 (11, 'designer port', '67601727433869pot.jpg', 'best design', 200, 2, '2024-09-27', '16:14:29', 3, NULL),
 (15, 'Fsn', '36771743394506pexels-photo-3685647.jpeg', 'This is Realastic', 3000, 2, '2025-03-31', '09:45:06', 2, NULL),
-(16, 'Magical Seeds', '72251743674103856217272696233.jfif', 'This is Magical Seeds', 500, 1, '2025-04-03', '15:25:03', 4, NULL);
+(17, 'Beats', '31951743854899f3.jfif', 'Limited Stock', 500, 1, '2025-04-05', '17:38:19', 11, NULL),
+(18, 'Goldr Pro', '5061174385578952481727269860f1.jfif', 'Fantastic', 480, 2, '2025-04-05', '17:53:09', 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -299,7 +304,7 @@ INSERT INTO `product_category` (`Pc_id`, `Pc_name`, `Pc_description`) VALUES
 (3, 'Pots', 'This is a Pots Section.'),
 (4, 'Seeds', 'This is a Seeds Section.                '),
 (5, 'Trees', 'This is a Trees Section                 '),
-(10, 'Magical Beats', 'One of Our Special item ');
+(11, 'Magical_Tree', 'Our Most famous Product');
 
 -- --------------------------------------------------------
 
@@ -426,13 +431,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `comment`
@@ -468,13 +473,13 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `Pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`

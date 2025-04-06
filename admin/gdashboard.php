@@ -133,8 +133,36 @@ include_once 'header.php';
                   </div>
                 </div>
               </div>
+
+              <!-- card 5 -->
+<div class="col-xl-3 col-md-6">
+  <div style="background-color:#074f0b" class="card mb-4">
+    <div class="card-body">
+      <h3 style="color:#fff;">Selling Report</h3>
+      <!-- count of orders -->
+      <?php
+      $query = "SELECT id FROM checkout";
+      $query_order_run = mysqli_query($conn, $query);
+      if ($order_total = mysqli_num_rows($query_order_run)) {
+        echo '<h4 class="mb-0" style="color:#fff;">' . $order_total . '</h4>';
+      } else {
+        echo '<h4 class="mb-0" style="color:#fff;"> No data </h4>';
+      }
+      ?>
+      <!-- end count -->
+    </div>
+    <div class="card-footer d-flex align-items-center justify-content-between">
+      <a class="small text-black stretched-link" href="selling_report.php">View Details</a>
+      <div class="small text-black"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+</div>
+<!-- end card5 -->
+
             </div>
             <!-- end card4 -->
+              
+            
           </div>
       </div>
 
