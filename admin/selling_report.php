@@ -2,11 +2,24 @@
     error_reporting(0);
     include 'connection.php';
     include 'header.php';
+
+    // Revenue Calculations
+    $revenue_sql = "SELECT SUM(p_price * qty) as total_revenue FROM cart";
+    $revenue_result = mysqli_query($conn, $revenue_sql);
+    $revenue_data = mysqli_fetch_assoc($revenue_result);
+    $total_revenue = $revenue_data['total_revenue'] ?? 0;
+
+    $earned_sql = "SELECT SUM(p_price * qty) as earned FROM cart WHERE status = 1";
+    $earned_result = mysqli_query($conn, $earned_sql);
+    $earned = mysqli_fetch_assoc($earned_result)['earned'] ?? 0;
+
+    $pending_sql = "SELECT SUM(p_price * qty) as pending FROM cart WHERE status = 0";
+    $pending_result = mysqli_query($conn, $pending_sql);
+    $pending = mysqli_fetch_assoc($pending_result)['pending'] ?? 0;
 ?>
 
 <!-- Sidebar + Page Content Wrapper -->
 <div class="wrapper d-flex align-items-stretch">
-
     <!-- Page Content -->
     <div id="content" class="p-4 p-md-5">
 
@@ -19,6 +32,34 @@
                 <h1 class="ms-3"><span style="color:green">Green</span> Life - Selling Report</h1>
             </div>
         </nav>
+
+        <!-- Revenue Cards -->
+        <div class="row text-center mb-4 mt-3">
+            <div class="col-md-4 mb-2">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5>Total Revenue</h5>
+                        <h3>₹<?= number_format($total_revenue) ?></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <h5>Completed Orders</h5>
+                        <h3>₹<?= number_format($earned) ?></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-2">
+                <div class="card bg-warning text-dark">
+                    <div class="card-body">
+                        <h5>Pending Orders</h5>
+                        <h3>₹<?= number_format($pending) ?></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Report Card -->
         <div class="card mt-4">

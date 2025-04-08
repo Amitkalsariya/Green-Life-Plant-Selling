@@ -16,10 +16,10 @@ if (empty($payment_id)) {
 unset($_SESSION['order_success']);
 
 // ✅ Optional: Clear the cart after successful order
-$u_id = $_SESSION['R_id'];
-if ($u_id) {
-    mysqli_query($conn, "DELETE FROM cart WHERE u_id='$u_id' AND status = 0");
-}
+// $u_id = $_SESSION['R_id'];
+// if ($u_id) {
+//     mysqli_query($conn, "DELETE FROM cart WHERE u_id='$u_id' AND status = 0");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
