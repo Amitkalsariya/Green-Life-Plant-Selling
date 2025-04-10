@@ -5,7 +5,7 @@ include_once 'header.php';
 // session_start();
 
 // Get user ID
-$u_id = $_SESSION['R_id'];
+// $u_id = $_SESSION['R_id'];
 
 // ✅ Fix: Delete all items when "Delete All" is clicked
 if (isset($_GET['delete_all'])) {
@@ -26,7 +26,7 @@ if (isset($_GET['c_id'])) {
 $sql_query = "SELECT cart.* , user.* , product.* FROM cart 
               INNER JOIN user ON user.R_id = cart.u_id 
               JOIN product ON product.Prod_id = cart.p_id 
-              WHERE cart.u_id='$u_id' AND status=0";
+              WHERE status=0";
 $data = mysqli_query($conn, $sql_query);
 ?>
 

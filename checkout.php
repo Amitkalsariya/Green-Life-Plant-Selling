@@ -41,6 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['payment_mode']) && is
             VALUES ('$firstname', '$lastname', '$email', '$phone', '$address', '$city', '$state', '$zip', '$payment_id')";
 
     if (mysqli_query($conn, $sql)) {
+        $checkout_id = mysqli_insert_id($conn);
+
+        // Insert each cart item into order_items
+        $cart_items = mysqli_query($conn, "SELECT * FROM cart WHERE u_id='$u_id' AND status=0");
+        while ($item = mysqli_fetch_assoc($cart_items)) {
+            $pid = $item['p_id'];
+            $qty = $item['qty'];
+            $price = $item['p_price'];
+            mysqli_query($conn, "INSERT INTO order_items (checkout_id, product_id, qty, price) VALUES ('$checkout_id', '$pid', '$qty', '$price')");
+        }
+
+        // Clear the cart
+        mysqli_query($conn, "DELETE FROM cart WHERE u_id='$u_id' AND status=0");
+
         $_SESSION['order_success'] = true;
         echo "success";
         exit;
@@ -136,8 +150,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['payment_mode']) && is
                     </div>
 
                     <div class="payment-options mt-3 mb-3">
-                        <label><input type="radio" name="payment_mode" value="COD" checked> Cash on Delivery</label><br>
-                        <label><input type="radio" name="payment_mode" value="Online"> Online Payment (Razorpay)</label>
+                        <label><input type="radio" name="payment_mode" value="COD" required> Cash on Delivery</label><br>
+                        <label><input type="radio" name="payment_mode" value="Online" required> Online Payment (Razorpay)</label>
                     </div>
 
                     <div class="checkout-btn mt-30">
@@ -156,15 +170,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['payment_mode']) && is
     $(document).ready(function () {
         function validateForm() {
             let isValid = true;
+
+            // Check all required inputs
             $("#checkout-form input[required]").each(function () {
                 if ($(this).val().trim() === "") {
                     isValid = false;
                 }
             });
+
+            // Ensure one payment option is selected
+            if (!$("input[name='payment_mode']:checked").val()) {
+                isValid = false;
+            }
+
             $("#pay-btn").prop("disabled", !isValid);
         }
 
-        $("#checkout-form input").on("input", validateForm);
+        // Trigger validation on input and change
+        $("#checkout-form input").on("input change", validateForm);
+        validateForm(); // Initial run in case of autofill
 
         $("#pay-btn").on("click", function () {
             const paymentMode = $("input[name='payment_mode']:checked").val();
@@ -185,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['payment_mode']) && is
                 });
             } else {
                 const options = {
-                    key: "rzp_test_AbTtgZTb0mnpc2",
+                    key: "rzp_test_BwWBTwSPtqGMAl",
                     amount: <?php echo $total_price * 100; ?>,
                     currency: "INR",
                     handler: function (response) {
@@ -208,6 +232,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['payment_mode']) && is
         });
     });
 </script>
-
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
 </body>
 </html>
