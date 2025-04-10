@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2025 at 08:44 AM
+-- Generation Time: Apr 10, 2025 at 03:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -67,7 +67,8 @@ INSERT INTO `cart` (`c_id`, `p_id`, `p_price`, `u_id`, `qty`, `status`) VALUES
 (49, 5, 1200, 21, 6, 1),
 (50, 6, 400, 21, 3, 1),
 (51, 9, 800, 21, 8, 1),
-(52, 7, 500, 22, 1, 1);
+(52, 7, 500, 22, 1, 1),
+(132, 9, 900, 34, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -98,19 +99,11 @@ INSERT INTO `checkout` (`id`, `firstname`, `lastname`, `emailid`, `phonenumber`,
 (8, 'Amii', 'K', 'amii@gmail.com', 1234567890, 'testing', 'test', 'test', '12345678', 'jBWMVX6qBrZPFdqz', '2025-04-06 11:24:57'),
 (11, 'Amit', 'Kalsariya', 'amit@gmail.com', 2147483647, 'Surat', 'Surat', 'Surat', '395004', 'XJU0VC4QwhgR1rBA', '2025-04-06 11:24:57'),
 (12, 'Amit', 'ricky', 's@gmaqil.com', 54854858, 'ukgyvu', 'ugvuy', 'vg', 'uyvuybv', 'y8D3L4bKdqjXfXmP', '2025-04-06 11:24:57'),
-(13, 'zcd', 'asdad', '', 0, '', '', '', '', 'SSAOUhqj0MZ5swc', '2025-04-06 11:24:57'),
-(14, 'zcd', 'asdad', '', 0, '', '', '', '', 'w3hXBCEev5qAq0yQ', '2025-04-06 11:24:57'),
-(15, '', '', '', 0, '', '', '', '', 'pay_QE9DJIxJdC7yGq', '2025-04-06 11:24:57'),
-(16, 'gtdg', 'safc', '', 0, '', '', '', '', 'KhXWy2sMSlQauhd1', '2025-04-06 11:24:57'),
 (17, 'Nemu', 'asdad', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', 'sdgsd', 'pay_QEATRQXgvVk9gL', '2025-04-06 11:24:57'),
 (18, 'sada', 'dsfsfs', 's@gmaqil.com', 2147483647, 'Ambika', 'Surat', 'Gujarat', '395004', 'pay_QEAZXwlnTBfry9', '2025-04-06 11:24:57'),
 (19, 'Jack', 'Reacher', 'reacher@gmail.com', 2147483647, 'Surat', 'Surat', 'Gujarat', '395006', 'pay_QEAsMgqzc7o8Hs', '2025-04-06 11:24:57'),
-(20, '', '', '', 0, '', '', '', '', 'COD-1743666963', '2025-04-06 11:24:57'),
 (21, 'etrf', 'tsrdg', 's@gmaqil.com', 2147483647, 'aSD', 'asd', 'adS', 'C', 'COD-1743667494', '2025-04-06 11:24:57'),
-(22, '', '', '', 0, '', '', '', '', 'COD', '2025-04-06 11:24:57'),
 (23, 'Nemu', 'asdad', 'morty@gmail.com', 2147483647, 'aSD', 'Surat', 'Gujarat', '395006', 'COD', '2025-04-06 11:24:57'),
-(24, '', '', '', 0, '', '', '', '', 'COD', '2025-04-06 11:24:57'),
-(25, '', '', '', 0, '', '', '', '', 'pay_QEWK1hkaQad4ic', '2025-04-06 11:24:57'),
 (34, 'Jackkk', 'Reacherrr', 'jack@gmail.com', 78096534, 'Surat', 'L', 'L', '890065', 'COD_352381', '2025-04-06 11:24:57'),
 (35, 'Jackkk', 'Reacherrr', 'jack@gmail.com', 78096534, 'Surat', 'L', 'L', '890065', 'pay_QFNPg5XLodoAbX', '2025-04-06 11:24:57'),
 (36, 'Un', 'UN', 'un@gmail.com', 2147483647, 'Xyz', 'Suyrat', 'Guj', '859004', 'COD_936135', '2025-04-06 11:24:57'),
@@ -121,7 +114,20 @@ INSERT INTO `checkout` (`id`, `firstname`, `lastname`, `emailid`, `phonenumber`,
 (41, 'ghvu', 'u', 'gvu@gmaiol.com', 874511212, 'sjnhol', 'n', 'o', 'knk', 'COD_111720', '2025-04-06 11:24:57'),
 (42, 'ghvu', 'u', 'gvu@gmaiol.com', 874511212, 'sjnhol', 'n', 'o', 'knk', 'COD_193810', '2025-04-06 11:24:57'),
 (43, 'Vaurn', 'swdiub', 'varun@gmail.com', 2147483647, 'szdchaaSAB', 'Surat', 'Surat', '874512', 'pay_QFeMSsB1wtp2U9', '2025-04-06 11:24:57'),
-(44, 'Un', 'Un', 'un@gmail.com', 2147483647, 'Surat', 'Suat', 'Gujarat', '874512', 'pay_QFejAVdbZ6fMEF', '2025-04-06 11:24:57');
+(44, 'Un', 'Un', 'un@gmail.com', 2147483647, 'Surat', 'Suat', 'Gujarat', '874512', 'pay_QFejAVdbZ6fMEF', '2025-04-06 11:24:57'),
+(45, 'asdsd', 'ada', 'a@gmail.com', 2147483647, 'asdj', 'sidhy', 'b', 'gi', 'COD_571445', '2025-04-07 14:33:11'),
+(46, 'saada', 'safsa', 'safsa', 2147483647, 'sad', 'gvu', 'uyv', 'ujv', 'COD_769456', '2025-04-07 14:44:34'),
+(47, 'asjhg', 'vuhy', 'vusyv@Qgmaiul.com', 787684654, 'knou', 'bi', 'bib', 'b', 'pay_QG8xgIHa6UwY1B', '2025-04-07 16:31:08'),
+(48, 'sadfa', 'asda', 'asd@gmail.com', 2147483647, 'scik', 'dshb', 'hb', 'bh', 'COD_419104', '2025-04-07 16:41:27'),
+(49, 'wef', 'ssdfdf', 'sdf@gmail.com', 87621626, 'sddhbi', 'hyqwu', 'bb ', '4684', 'COD_930489', '2025-04-07 16:46:06'),
+(50, 'asas', 'ycyj', 'c', 2147483647, 'cytg', 'ytv', 'ytc', 'yt', 'COD_95217', '2025-04-07 16:47:14'),
+(51, 'Salman', 'wde', 's@gmsail.com', 2147483647, 'Su', 'Surat', 'Surst', '784512', 'COD_336474', '2025-04-09 14:51:53'),
+(52, 'bvuj', 'vuhv', 'v@gmai.com', 46846841, 'hhvi', 'vbhi', 'kim', '7878', 'COD_939722', '2025-04-10 16:08:00'),
+(53, 'uyg', 'guyg', 'gyi@gmail.com', 6846844, 'iuhbiu', 'biuhiu', 'nhiuj', '4816', 'COD_470630', '2025-04-10 16:14:01'),
+(54, 'edfuhyg', 'yguyb', 'bguy@gmail.com', 5418464, 'ghvuky', 'gyhbguy', 'bn', '54', 'COD_92043', '2025-04-10 16:15:42'),
+(55, 'Amit', 'Nem', 'nem@gmail.com', 2147483647, 'Surat', 'Suyrat', 'Sruat', '459641', 'COD_995647', '2025-04-10 16:25:20'),
+(56, 'Amit', 'Kalaiyr', 'hyb', 578587485, 'jhygi', 'bgyhgb', 'yhgbi', '46', 'pay_QHKxhTWpPiwEO8', '2025-04-10 16:54:26'),
+(57, 'ujbou', 'buibno', 'bn@gmail.com', 8468468, 'ioi', 'nhiub', 'iub', '5241', 'pay_QHLPTdRKzkZ8X1', '2025-04-10 17:20:44');
 
 -- --------------------------------------------------------
 
@@ -169,6 +175,31 @@ CREATE TABLE `faq` (
 INSERT INTO `faq` (`fq_id`, `fq_type`, `Question`, `Answer`) VALUES
 (38, 'order related', 'Which Payment Method Will be Work Smoothly ?', 'Razorpay Is The One of The Best Online P'),
 (39, 'plant related', 'Which Plants are selling on our platform', 'Seeds, Magical Seeds , Plants and etc');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_items`
+--
+
+CREATE TABLE `order_items` (
+  `id` int(11) NOT NULL,
+  `checkout_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `checkout_id`, `product_id`, `qty`, `price`) VALUES
+(1, 55, 10, 1, 450.00),
+(2, 56, 6, 1, 500.00),
+(3, 57, 7, 1, 500.00),
+(4, 57, 17, 1, 500.00),
+(5, 57, 11, 1, 200.00);
 
 -- --------------------------------------------------------
 
@@ -337,7 +368,8 @@ INSERT INTO `user` (`R_id`, `name`, `email`, `contact`, `address`, `city`, `date
 (34, 'BCA SEM 6 PROJECT', 'group13@gmail.com', '9876543211', 'Amroli', 'Surat', '0000-00-00', '00:00:00', '123456', 'Group-no_13.jpeg', ''),
 (35, 'Henil', 'h@gmail.com', '8745219896', 'Surat', 'Surat', '0000-00-00', '00:00:00', '112233', 'fixer.png', ''),
 (36, 'Meet', 'm13@gmail.com', '9876543211', 'Amroli', 'Surat', '0000-00-00', '00:00:00', '123456', 'Group-no_13.jpeg', ''),
-(37, 'Chirag', 'c@gmail.com', '9876543211', 'Amroli', 'Surat', '0000-00-00', '00:00:00', '123456', 'Group-no_13.jpeg', '');
+(37, 'Chirag', 'c@gmail.com', '9876543211', 'Amroli', 'Surat', '0000-00-00', '00:00:00', '123456', 'Group-no_13.jpeg', ''),
+(38, 'Amit Kalsariyaa', 'rick@gmail.com', '7487820795', 'Mumbai', 'Bardoli', '0000-00-00', '00:00:00', '123456', 'crad.png', '');
 
 --
 -- Indexes for dumped tables
@@ -374,6 +406,13 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `faq`
   ADD PRIMARY KEY (`fq_id`);
+
+--
+-- Indexes for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `checkout_id` (`checkout_id`);
 
 --
 -- Indexes for table `plant_details`
@@ -431,13 +470,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `comment`
@@ -450,6 +489,12 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `faq`
   MODIFY `fq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `plant_details`
@@ -485,7 +530,17 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `R_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `R_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`checkout_id`) REFERENCES `checkout` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
